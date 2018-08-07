@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- related to the connection START -->
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+		<property name="connection.user">scott</property>
+		<property name="connection.password">tiger</property>
+		<!-- related to the connection END -->
+
+		<!-- related to the hibernate properties START -->
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="show_sql">true</property>
+		<!-- related to the hibernate properties END -->
+
+
+		<!-- related to mapping START -->
+		<mapping resource="person.hbm.xml" />
+		<!-- related to mapping END -->
+
+	</session-factory>
+</hibernate-configuration>

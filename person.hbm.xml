@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.deloitte.person" table="PERSON">
+		<meta attribute="class-description">
+			THIS CLASS CONTAINS THE PERSON DETAILS</meta>
+
+
+		<!-- specifies the primary key attribute in the class -->
+		<id name="id" column="PID">
+
+			<!-- programmers need to provide unique id -->
+			<generator class="assigned" />
+		</id>
+
+		<!-- specifies the other properties -->
+		<property name="name" column="NAME" type="string"></property>
+		<many-to-one name="pp" column="PASSPORT_NO" unique="true" class="com.deloitte.Passport" cascade="all" not-null="true"/>
+	</class>
+	
+	
+<class name="com.deloitte.Passport" table="PASSPORT">
+<meta attribute="class-description">this class contains the passport details</meta>
+<id name="ppid" type="int" column="PPID">
+<generator class="assigned"/>
+</id>
+<property name="ppname" column="PP_NAME" type="string"/>
+</class>
+
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.deloitte.laptop" table="LAPTOP">
+		<meta attribute="class-description">
+			THIS CLASS CONTAINS THE LAPTOP DETAILS</meta>
+
+
+		<!-- specifies the primary key attribute in the class -->
+		<id name="id" column="LID">
+
+			<!-- programmers need to provide unique id -->
+			<generator class="assigned" />
+		</id>
+
+		<!-- specifies the other properties -->
+		<property name="brandName" column="BRANDNAME"></property>
+		<property name="price" column="PRICE"></property>
+	</class>
+</hibernate-mapping>
